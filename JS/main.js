@@ -19,12 +19,42 @@
     
 // );
 
-const container = document.querySelector(".container");
-gioca();
-function gioca(){
-    for(let i = 1; i <= 100; i++){
+const campo = document.querySelector(".campo");
 
-        container.innerHTML += `<div class="cella">` + i + `</div>`;
+// variabile che serve ad impedire di stampare un sacco di campi
+let numPartita = 0;
+const gioca = document.querySelector("#gioca");
+gioca.addEventListener("click",
+    function(){
+        if(numPartita === 0){
+            generaCampo();
+            numPartita++;
+        };
+    }
+);
+
+
+
+
+function generaCampo(){
+    for(let i = 1; i <= 100; i++){
+        // costante in cui salvo la nuova cella
+        const nuovaCella = newCella();
+        // le inserisco il suo numero
+        nuovaCella.innerHTML = i;
+        // le aggiungo l'event listener
+        nuovaCella.addEventListener("click",
+            function(){
+                // metto/tolgo la classe clicked (la rendo azzurra)
+                nuovaCella.classList.toggle("clicked");
+                // stampo il numero in console
+                console.log("cella #" + i);
+            }
+        );
+
+
+
+        campo.appendChild(nuovaCella);
         
 
         
@@ -32,6 +62,21 @@ function gioca(){
     }
 
 }
+
+
+function newCella(){
+    //creo nuovo div e lo salvo nella costante mioElement 
+    const mioElement = document.createElement("div");
+    // le aggiungo la classe cella
+    mioElement.classList.add("cella")
+    // ritorno questo div
+    return mioElement;
+}
+
+
+
+
+
 
 
 // ciclo for console esplicativo 

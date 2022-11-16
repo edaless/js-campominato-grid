@@ -18,29 +18,46 @@ font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-body{
+header{
+    height: 70px;
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 100px;
+}
+button{
+    height: 25px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    min-height: 100vh;
+    padding: 20px;
+    min-height: 90vh;
 
 }
-.container{
-    width: calc(10 * var(--w-cella));
+:root{
+    /* var(--w-campo) */
+    --w-campo: 600px;
+    
+}
+.campo{
+    width: var(--w-campo);
     display: flex;
     flex-wrap: wrap;
 }
 
 :root{
     /* var(--w-cella) */
-    --w-cella: 60px;
+    --w-cella: calc(var(--w-campo) / 10);
     
 }
 .cella{
     width: var(--w-cella);
     height: var(--w-cella);
-    background-color: brown;
+    /* background-color: brown; */
     border: 1px solid black;
 }
 
