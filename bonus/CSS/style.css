@@ -25,7 +25,7 @@ header{
     align-items: center;
     padding: 0 100px;
 }
-button{
+button, select{
     height: 25px;
 }
 
@@ -49,18 +49,24 @@ button{
     flex-wrap: wrap;
 }
 
-:root{
-    /* var(--w-cella) */
-    --w-cella: calc(var(--w-campo) / 10);
-    
-}
+
 .cella{
-    width: var(--w-cella);
-    height: var(--w-cella);
     /* background-color: brown; */
     border: 1px solid black;
 }
-
+.easy{
+    width: calc(var(--w-campo) / 10);
+    height: calc(var(--w-campo) / 10);
+}
+.medium{
+    width: calc(var(--w-campo) / 9);
+    height: calc(var(--w-campo) / 9);
+}
+.difficult{
+    width: calc(var(--w-campo) / 7.001);
+    height: calc(var(--w-campo) / 7.001);
+    /* boh, altrimenti non ce ne stanno 7 */
+}
 
 .clicked{
     background-color: aqua;

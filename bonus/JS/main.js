@@ -24,10 +24,13 @@ const campo = document.querySelector(".campo");
 // variabile che serve ad impedire di stampare un sacco di campi
 let numPartita = 0;
 const gioca = document.querySelector("#gioca");
+const difficoltà = document.getElementById("difficoltà");
+
 gioca.addEventListener("click",
     function(){
         if(numPartita === 0){
-            generaCampo();
+            generaCampo(parseInt(difficoltà.value));
+            
             numPartita++;
         };
     }
@@ -36,10 +39,22 @@ gioca.addEventListener("click",
 
 
 
-function generaCampo(){
-    for(let i = 1; i <= 100; i++){
-        // costante in cui salvo la nuova cella
-        const nuovaCella = newCella();
+function generaCampo(numTess){
+    
+    for(let i = 1; i <= numTess; i++){
+        // costante in cui salvo una nuova cella
+        let nuovaCella;
+
+        // determino che tipo di cella voglio, che la creo
+        if(numTess === 100){
+            nuovaCella = newCella("easy");
+        }else if(numTess === 81){
+            nuovaCella = newCella("medium");
+        }else{
+            nuovaCella = newCella("difficult");
+        };
+
+
         // le inserisco il suo numero
         nuovaCella.innerHTML = i;
         // le aggiungo l'event listener
@@ -64,11 +79,13 @@ function generaCampo(){
 }
 
 
-function newCella(){
+function newCella(tipo){
     //creo nuovo div e lo salvo nella costante mioElement 
     const mioElement = document.createElement("div");
     // le aggiungo la classe cella
     mioElement.classList.add("cella")
+    // le aggiungo la classe del tipo passato
+    mioElement.classList.add(tipo)
     // ritorno questo div
     return mioElement;
 }
