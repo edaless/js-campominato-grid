@@ -1,0 +1,52 @@
+/* roboto */
+/* 
+
+
+font-family: 'Roboto', sans-serif;
+
+*/
+
+/* :root{ */
+    /* var(--w-colonna) */
+    /* --w-colonna: 130px; */
+    
+/* } */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
+}
+.container{
+    width: calc(10 * var(--w-cella));
+    display: flex;
+    flex-wrap: wrap;
+}
+
+:root{
+    /* var(--w-cella) */
+    --w-cella: 60px;
+    
+}
+.cella{
+    width: var(--w-cella);
+    height: var(--w-cella);
+    background-color: brown;
+    border: 1px solid black;
+}
+
+
+.clicked{
+    background-color: aqua;
+}
+
+
