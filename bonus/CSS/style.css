@@ -44,13 +44,16 @@ button, select{
     
 }
 .campo{
-    width: var(--w-campo);
+    width: calc(var(--w-campo) + 2px);
+    /* i due px sono il border */
     display: flex;
     flex-wrap: wrap;
+    border: 1px solid black;
 }
 
 
 .cella{
+    padding: 1%;
     /* background-color: brown; */
     border: 1px solid black;
 }
@@ -63,6 +66,8 @@ button, select{
     height: calc(var(--w-campo) / 9);
 }
 .difficult{
+    /* width: calc(var(--w-campo) / 7);
+    height: calc(var(--w-campo) / 7); */
     width: calc(var(--w-campo) / 7.001);
     height: calc(var(--w-campo) / 7.001);
     /* boh, altrimenti non ce ne stanno 7 */
