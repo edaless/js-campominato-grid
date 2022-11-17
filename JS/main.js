@@ -16,7 +16,6 @@
 const campo = document.querySelector(".campo");
 
 const gioca = document.querySelector("#gioca");
-const difficoltà = document.getElementById("difficoltà");
 
 gioca.addEventListener("click",
     function(){
