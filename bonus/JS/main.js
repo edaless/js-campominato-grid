@@ -11,28 +11,18 @@
 
 
 
-
-
-// const gioca = document.getElementById("gioca");
-
-// gioca.addEventListener("click",
-    
-// );
-
 const campo = document.querySelector(".campo");
 
-// variabile che serve ad impedire di stampare un sacco di campi
-let numPartita = 0;
 const gioca = document.querySelector("#gioca");
 const difficoltà = document.getElementById("difficoltà");
 
 gioca.addEventListener("click",
     function(){
-        if(numPartita === 0){
-            generaCampo(parseInt(difficoltà.value));
+        // svuoto il campo
+        campo.innerHTML = "";
+        // riempo il campo
+        generaCampo(parseInt(difficoltà.value));          
             
-            numPartita++;
-        };
     }
 );
 
@@ -42,10 +32,10 @@ gioca.addEventListener("click",
 function generaCampo(numTess){
     
     for(let i = 1; i <= numTess; i++){
-        // costante in cui salvo una nuova cella
+        // variabile in cui salvo una nuova cella
         let nuovaCella;
 
-        // determino che tipo di cella voglio, che la creo
+        // determino che tipo di cella voglio, la creo associandola alla variabile
         if(numTess === 100){
             nuovaCella = newCella("easy");
         }else if(numTess === 81){
@@ -57,6 +47,7 @@ function generaCampo(numTess){
 
         // le inserisco il suo numero
         nuovaCella.innerHTML = i;
+
         // le aggiungo l'event listener
         nuovaCella.addEventListener("click",
             function(){
@@ -67,12 +58,8 @@ function generaCampo(numTess){
             }
         );
 
-
-
-        campo.appendChild(nuovaCella);
-        
-
-        
+        // aggiungo la cella al campo
+        campo.appendChild(nuovaCella);        
         
     }
 

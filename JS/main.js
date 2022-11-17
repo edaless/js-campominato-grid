@@ -13,26 +13,20 @@
 
 
 
-// const gioca = document.getElementById("gioca");
-
-// gioca.addEventListener("click",
-    
-// );
-
 const campo = document.querySelector(".campo");
 
-// variabile che serve ad impedire di stampare un sacco di campi
-let numPartita = 0;
 const gioca = document.querySelector("#gioca");
+const difficoltà = document.getElementById("difficoltà");
+
 gioca.addEventListener("click",
     function(){
-        if(numPartita === 0){
-            generaCampo();
-            numPartita++;
-        };
+        // svuoto il campo
+        campo.innerHTML = "";
+        // riempo il campo
+        generaCampo();          
+            
     }
 );
-
 
 
 
